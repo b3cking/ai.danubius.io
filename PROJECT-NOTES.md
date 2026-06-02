@@ -13,7 +13,9 @@ A CEO erről fog előadni (BusinessFest, Budapest).
 
 - **Nincs szerver, nincs build lépés** — tiszta natív HTML/CSS/JS, GitHub Pages-en fut.
 - **Repo:** https://github.com/b3cking/ai.danubius.io
-- **Tervezett domain:** `ai.danubius.io` (még be kell állítani, lásd 7. pont)
+- **ÉLŐ URL (GitHub Pages):** https://b3cking.github.io/ai.danubius.io/ ✅ (Pages bekapcsolva, működik)
+- **Tervezett domain:** `ai.danubius.io` — jelenleg MÉG a meglévő Aimee-oldalt szolgálja ki.
+  A felhasználó **később, a véglegesítés után állítja át** erre a repóra (DNS CNAME + Pages „Custom domain" mező). Addig a github.io URL az élő.
 
 ---
 
@@ -89,9 +91,9 @@ ezért szándékosan bent maradt (cserélhető, ha kell).
 
 ## 6. NYITOTT TEENDŐK (innen folytatható holnap)
 
-- [ ] **GitHub Pages bekapcsolása**: Settings → Pages → Source: Deploy from a branch → `main` / root.
-- [ ] **Custom domain** `ai.danubius.io`: Pages „Custom domain" mező + DNS CNAME → `b3cking.github.io`.
-      (Felajánlva: be tudom állítani `gh` CLI-vel, ha van auth a gépen.)
+- [x] **GitHub Pages bekapcsolva** — élő: https://b3cking.github.io/ai.danubius.io/
+- [ ] **Custom domain** `ai.danubius.io` átállítása (a felhasználó csinálja a véglegesítés után):
+      Pages „Custom domain" mező + DNS CNAME → `b3cking.github.io`. Jelenleg az Aimee-oldal van ott.
 - [ ] **Valódi e-mail cím** beírása `hello@danubius.io` helyett (CTA gomb + footer).
 - [ ] **Esettanulmány számai** (900 → 140 embernap, −84%) — ellenőrizni / pontosítani, ha publikus.
 - [ ] **OG-kép** közösségi megosztáshoz (1200×630), jelenleg nincs `og:image`.
