@@ -132,7 +132,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 /* Logo */
-.logo { display: flex; align-items: center; gap: 12px; }
+.logo { display: flex; align-items: center; gap: 12px; padding: 7px 11px; border-radius: 12px; background: transparent; transition: background .3s var(--ease), box-shadow .3s var(--ease); }
+.logo-img { height: 30px; width: auto; display: block; }
+/* on dark backgrounds (hero header before scroll, footer) show a white badge so the logo stays legible */
+.site-header:not(.scrolled) .logo { background: #fff; box-shadow: var(--shadow-sm); }
+.site-footer .logo { background: #fff; display: inline-flex; }
 .logo .mark { width: 38px; height: 38px; flex: none; }
 .logo .wordmark { display: flex; flex-direction: column; line-height: 1; }
 .logo .wordmark b {
@@ -582,7 +586,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .offer-wide-copy h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 2.6vw, 2.3rem); margin-bottom: 14px; }
 .offer-wide-copy h3 .hl { color: var(--gold); font-style: italic; }
 .offer-wide-copy .offer-sub { margin-bottom: 26px; }
-.offer-list--grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+.offer-list--grid { display: block; column-count: 2; column-gap: 36px; }
+.offer-list--grid li { break-inside: avoid; margin-bottom: 20px; }
+.offer-list--grid li:last-child { margin-bottom: 0; }
 
 /* Proof stats (light) under the "build is worth it" rules */
 .proof-stats { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 36px; }
@@ -598,7 +604,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .offer-wide-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 620px) {
-  .offer-list--grid { grid-template-columns: 1fr; }
+  .offer-list--grid { column-count: 1; }
   .proof-stats .stat { min-width: 100%; }
 }
 
