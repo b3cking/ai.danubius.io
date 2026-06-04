@@ -45,23 +45,27 @@ Helyi megtekintés: dupla katt `index.html`-en (szerver nem kell).
 
 ---
 
-## 4. Oldal-szerkezet (jelenlegi állapot)
+## 4. Oldal-szerkezet (jelenlegi állapot — 3. kör, JPÉ-narratíva)
 
-1. **Hero** — „Ami tegnap még elérhetetlen volt, ma már csak üzleti döntés kérdése." +
-   badge „Építeni vagy venni? · 2026" + statok (3–5×, −84%, Hetek→pilot) + mini-mátrix kártya
+A 3. visszajelzés (lásd 5. pont) után **átstrukturálva** egy letisztult, 5-blokkos sztorira.
+A korábbi nagy Build-vs-Buy 2×2 mátrix, a hero mini-mátrix, a „szoftverek csapdája" és a külön
+„ahogy mi dolgozunk" blokk **kivéve** — lényegük a megmaradt szekciókba olvasztva.
+
+1. **Hero** — mottó + „mit csinálunk" (kétféleképp. segítünk: AI ahol érdemes + egyedi fejlesztés).
+   **Egy hasáb, középre zárva**, mini-mátrix nélkül (`.hero-grid.solo`). Statok innen átkerültek a 4. blokkba.
 2. **Trust strip** — IT-cég háttér / saját IT nélkül is / Aimee építőkövek
-3. **A váltás** (`#valtas`) — régi szabály vs. frissített szabály (2026)
-4. **A szoftverek csapdája** — 4 fájdalompont (dobozos, drága fejlesztés, drága tanácsadó, ért(het)etlen fejlesztők)
-5. **AI a fejlesztésben** (`#ai-fejlesztes`) — 3–5× / −84% / „De… szakértelem kell"
-6. **Döntési mátrix** — címkézett 2×2 „Építeni vagy venni?" (lásd 6. pont, ezt írtuk át)
-7. **Amit kínálunk** (`#ajanlat`) — 2 pillér:
-   - **Danubius** (bal, sötét kártya): egyedi, AI-támogatott fejlesztés
-   - **Aimee** (jobb, fehér kártya): gyorsan bevethető AI megoldások (Cégre szabott / Sokoldalú / Megbízható / Naprakész)
-8. **Esettanulmány** (`#eset`) — belső ERP, 900 → 140 embernap (−84%, ~6,4×), oszlopdiagram
-9. **Ahogy mi dolgozunk** — „A kockázat" vs. „Ahogy mi dolgozunk"
-10. **Az AI alkalmazása** — 8 képesség-kártya (dokumentumok, tudásbázis, hang/kép, űrlapok, adatelemzés, workflow, web/mobil, legacy)
-11. **CTA** (`#kapcsolat`) — „Ti hol tartotok az AI-jal? Gyertek, beszélgessünk!" + BusinessFest stand
-12. **Footer**
+3. **AI ott, ahol érdemes** (`#ai`) — Aimee. Lead + 4 quality pill (Cégre szabott / Sokoldalú /
+   Megbízható / Naprakész) + **8 AI agent dobozka** (`.caps-grid`). ⚠️ A doboz-szövegek
+   **Enikő végleges 1pager anyagával cserélendők** (HTML-ben jelölve `NOTE` kommenttel).
+4. **A Te rendszereidet és csapatodat is fejlesztjük** (`#fejlesztes`) — Danubius egyedi fejlesztés,
+   széles sötét kártya (`.offer--wide`), BPeti 5 átfogalmazott pontja 2 oszlopban. Tartalmazza az
+   enablement-üzenetet („nem csak szállítunk").
+5. **Ma már megéri saját fejlesztést** (`#megeri`) — régi vs. frissített szabály (`.shift`) +
+   3 proof-stat (3–5× / −84% / Hetek). A „de szakértelem kell" caveat a leadben.
+6. **Esettanulmány** (`#eset`) — „Egy ERP-projekt a gyakorlatban", **„belső" jelző levéve**,
+   8 funkcióterület + 900 → 140 embernap (−84%, ~6,4×) oszlopdiagram.
+7. **CTA** (`#kapcsolat`) — „Ti hol tartotok az AI-jal? Gyertek, beszélgessünk!" + BusinessFest stand
+8. **Footer**
 
 ---
 
@@ -86,6 +90,17 @@ Helyi megtekintés: dupla katt `index.html`-en (szerver nem kell).
 
 **Megjegyzés:** a „vibe-kódolási sebességgel" a felhasználó eredeti megfogalmazása,
 ezért szándékosan bent maradt (cserélhető, ha kell).
+
+**3. kör — teljes átstrukturálás (BPeti visszajelzése):**
+- Kritika: az 1. verzió „kb. egy első promptos összefűzése" a prezinek és Enikő anyagának;
+  gondoljuk át JPÉ-módszertannal, mit hagyunk benne és hogyan épül fel.
+- BPeti javasolt felépítése (ezt valósítottuk meg, lásd 4. pont):
+  1) mottó + leírás (a melletti építeni/venni blokk **kuka**),
+  2) „AI-t ott, ahol érdemes" + AI agent dobozkák (Enikő 1pager),
+  3) „a Te rendszereidet és csapatodat is fejlesztjük" (BPeti 1pager-pontjai),
+  4) összegzés: ma már megéri saját fejlesztés,
+  5) számokkal illusztrált ERP-példa, **a „belső" hangsúly nélkül**.
+- Nyitott: Enikő és BPeti **végleges 1pager szövegei** még beillesztendők (placeholderek vannak).
 
 ---
 

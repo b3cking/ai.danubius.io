@@ -537,6 +537,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .cta-meta { margin-top: 34px; font-size: .92rem; color: var(--blue-200); display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
 .cta-meta b { color: #fff; }
+.cta-meta a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); transition: text-decoration-color .2s; }
+.cta-meta a:hover { text-decoration-color: #fff; }
 .cta-meta .sep { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
 
 /* ============================================================
@@ -552,6 +554,53 @@ ul { margin: 0; padding: 0; list-style: none; }
 .foot-cols a { display: block; margin-bottom: 11px; font-size: .94rem; transition: color .2s; }
 .foot-cols a:hover { color: #fff; }
 .foot-bottom { padding-top: 26px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: .86rem; }
+
+/* ============================================================
+   Restructure additions (2026 — JPÉ-szerinti narratíva)
+   ============================================================ */
+
+/* Hero — single, centered column (no side matrix) */
+.hero-grid.solo { grid-template-columns: 1fr; max-width: 880px; margin: 0 auto; text-align: center; }
+.hero-grid.solo .hero-badge { margin-left: auto; margin-right: auto; }
+.hero-grid.solo .hero-sub { margin-left: auto; margin-right: auto; }
+.hero-grid.solo .hero-actions { justify-content: center; }
+
+/* Aimee quality row */
+.quals {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  max-width: 880px; margin: 0 auto 44px;
+}
+.quals .qual {
+  background: #fff; border: 1px solid var(--line); border-radius: 100px;
+  padding: 9px 18px; font-size: .9rem; color: var(--muted); box-shadow: var(--shadow-sm);
+}
+.quals .qual b { color: var(--navy-800); font-weight: 700; }
+
+/* Custom-dev wide card (your systems & team) */
+.offer--wide { box-shadow: var(--shadow); }
+.offer-wide-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 48px; align-items: center; margin-top: 6px; }
+.offer-wide-copy h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 2.6vw, 2.3rem); margin-bottom: 14px; }
+.offer-wide-copy h3 .hl { color: var(--gold); font-style: italic; }
+.offer-wide-copy .offer-sub { margin-bottom: 26px; }
+.offer-list--grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+
+/* Proof stats (light) under the "build is worth it" rules */
+.proof-stats { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 36px; }
+.proof-stats .stat {
+  flex: 1; min-width: 200px; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 28px 30px; box-shadow: var(--shadow-sm);
+}
+.proof-stats .stat b { font-family: var(--serif); font-size: 2.4rem; font-weight: 600; color: var(--navy-800); display: block; line-height: 1; }
+.proof-stats .stat .lab { color: var(--muted); font-size: .95rem; margin-top: 8px; display: block; }
+.proof-stats .stat--accent b { color: var(--orange); }
+
+@media (max-width: 980px) {
+  .offer-wide-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 620px) {
+  .offer-list--grid { grid-template-columns: 1fr; }
+  .proof-stats .stat { min-width: 100%; }
+}
 
 /* ============================================================
    Reveal animation
