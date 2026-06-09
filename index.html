@@ -256,10 +256,18 @@
         <div class="gold-dash reveal"></div>
         <h2 class="reveal d1">Nálatok is lehetséges!</h2>
         <p class="reveal d2">Még csak ismerkedtek a témával, vagy már konkrét ötletetek is van? Mindkét esetben beszéljünk, és gondolkodjunk tovább együtt!</p>
-        <div class="cta-actions reveal d3">
-          <a href="mailto:karoly.halmosi@danubius.io?subject=AI%20konzultáció" class="btn btn--primary">Írj nekünk →</a>
-          <a href="#ai" class="btn btn--ghost">Így dolgozunk</a>
-        </div>
+        <form class="cta-form reveal d3" id="contactForm"
+              action="https://formspree.io/f/mvznrlqk" method="POST">
+          <div class="field-row">
+            <input type="text" name="name" placeholder="Neved" autocomplete="name" required />
+            <input type="email" name="email" placeholder="E-mail címed" autocomplete="email" required />
+          </div>
+          <textarea name="message" rows="3" placeholder="Miben segíthetünk? Pár mondat is elég." required></textarea>
+          <input type="hidden" name="_subject" value="Új üzenet — danubius AI landing" />
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn--primary" id="contactSubmit">Üzenet küldése →</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
         <div class="cta-meta reveal d3">
           <span>Vagy gyere a standunkhoz a <a href="https://budapest.businessfest.hu/" target="_blank" rel="noopener"><b>BusinessFesten</b></a>, június 11-én a BME Campuson (I épület)</span>
         </div>

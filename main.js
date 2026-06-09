@@ -79,6 +79,48 @@
     counters.forEach(function (el) { io2.observe(el); });
   }
 
+  /* ---- Contact form: AJAX submit to Formspree (stay on page) ---- */
+  var form = document.getElementById("contactForm");
+  var statusEl = document.getElementById("formStatus");
+  var submitBtn = document.getElementById("contactSubmit");
+  if (form && window.fetch) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (statusEl) { statusEl.textContent = ""; statusEl.className = "form-status"; }
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Küldés…"; }
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            if (statusEl) {
+              statusEl.textContent = "Köszönjük! Megkaptuk az üzeneted, hamarosan jelentkezünk.";
+              statusEl.className = "form-status ok";
+            }
+            if (submitBtn) submitBtn.textContent = "Elküldve ✓";
+          } else {
+            return res.json().then(function (data) {
+              var msg = data && data.errors && data.errors.length
+                ? data.errors.map(function (x) { return x.message; }).join(", ")
+                : "Hiba történt a küldés során.";
+              throw new Error(msg);
+            });
+          }
+        })
+        .catch(function (err) {
+          if (statusEl) {
+            statusEl.textContent = "Nem sikerült elküldeni — próbáld újra, vagy írj a karoly.halmosi@danubius.io címre.";
+            statusEl.className = "form-status err";
+          }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Üzenet küldése →"; }
+        });
+    });
+  }
+
   /* ---- Footer year ---- */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();

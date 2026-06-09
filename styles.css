@@ -545,6 +545,32 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cta-meta a:hover { text-decoration-color: #fff; }
 .cta-meta .sep { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
 
+/* contact form (on dark CTA) */
+.cta-form { max-width: 540px; margin: 0 auto; text-align: left; }
+.cta-form .field-row { display: flex; gap: 14px; margin-bottom: 14px; }
+.cta-form .field-row > * { flex: 1; min-width: 0; }
+.cta-form input, .cta-form textarea {
+  width: 100%; font: inherit; color: #fff;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 14px; padding: 14px 16px;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+.cta-form textarea { resize: vertical; min-height: 104px; margin-bottom: 16px; }
+.cta-form input::placeholder, .cta-form textarea::placeholder { color: var(--blue-200); opacity: .85; }
+.cta-form input:focus, .cta-form textarea:focus {
+  outline: none; border-color: var(--blue-400);
+  background: rgba(255, 255, 255, .12);
+  box-shadow: 0 0 0 4px rgba(74, 149, 206, .18);
+}
+.cta-form .btn { width: 100%; }
+.cta-form .btn[disabled] { opacity: .65; cursor: progress; }
+.cta-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { margin: 16px 0 0; font-size: .95rem; min-height: 1.2em; text-align: center; }
+.form-status.ok { color: #6fe0c4; }
+.form-status.err { color: #ffb4a0; }
+@media (max-width: 560px) { .cta-form .field-row { flex-direction: column; gap: 14px; } }
+
 /* ============================================================
    Footer
    ============================================================ */
